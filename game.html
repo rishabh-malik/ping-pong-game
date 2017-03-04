@@ -9,6 +9,8 @@
     var ballSpeedX=5;
     var ballY=10;
     var ballSpeedY=4;
+    var paddle1Y=300;
+    const PADDLE_HEIGHT=100;
 
     window.onload=function(){
         canvas= document.getElementById('gameCanvas');
@@ -42,7 +44,7 @@
         canvasContext.fillStyle='black';
         canvasContext.fillRect(0,0,canvas.width,canvas.height);
         canvasContext.fillStyle='white';
-        canvasContext.fillRect(0,210,10,100);
+        canvasContext.fillRect(0,paddle1Y,10,PADDLE_HEIGHT);
         canvasContext.fillStyle='white';
         canvasContext.fillRect(ballX,ballY,10,10);
 
