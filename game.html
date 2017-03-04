@@ -33,7 +33,8 @@
         canvasContext.fillStyle='white';
         canvasContext.fillRect(0,210,10,100);
         canvasContext.fillStyle='white';
-        canvasContext.fillRect(ballX,100,10,10);
+        canvasContext.beginPathX();
+        canvasContext.arc(ballX,100,10,0,Math.PI*2,true);
 
 
     }
