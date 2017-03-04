@@ -18,9 +18,13 @@
 
     function moveEverything(){
         ballX=ballX+ballSpeedX;
-        if(ballX>800)
+        if(ballX>canvas.width)
         {
-            ballSpeedX= -5;
+            ballSpeedX= -ballSpeedX;
+        }
+        else if(ballX<0)
+        {
+            ballSpeedX= -ballSpeedX;
         }
     }
     function drawEverything(){
