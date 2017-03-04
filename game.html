@@ -12,12 +12,30 @@
     var paddle1Y=300;
     const PADDLE_HEIGHT=100;
 
+    function calculateMousePos(evt)     //function to move paddle acc to position of mouse
+    {
+        var rect = canvas.getBoundingClientRect();
+        var root= document.documentElement;
+        var mouseX= evt.clientX-rect.left-root.scrollLeft;
+        var mouseY= evt.clientY-rect.top-root.scrollTop;
+        return{
+            x:mouseX,y:mouseY
+        };
+    }
+
     window.onload=function(){
         canvas= document.getElementById('gameCanvas');
         canvasContext=canvas.getContext('2d');
 
         var framesPerSecond=30;
         setInterval(function(){moveEverything();drawEverything();},1000/framesPerSecond);
+
+        canvas.addEventListener('mousemove',
+        function(evt){
+                     var mousePos=calculateMousePos(evt);
+                     paddle1Y=mousePos.y-(PADDLE_HEIGHT/2);
+
+        });
     }
 
     function moveEverything(){
