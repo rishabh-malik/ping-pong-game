@@ -9,8 +9,10 @@
     var ballSpeedX=5;
     var ballY=10;
     var ballSpeedY=4;
-    var paddle1Y=300;
+    var paddle1Y=250;
+    var paddle2Y=250;
     const PADDLE_HEIGHT=100;
+
 
     function calculateMousePos(evt)     //function to move paddle acc to position of mouse
     {
@@ -48,7 +50,12 @@
          ballY=ballY+ballSpeedY;
         if(ballX>canvas.width)
         {
-            ballSpeedX= -ballSpeedX;
+             if(ballY>paddle2Y && ballY<paddle2Y+PADDLE_HEIGHT){
+            ballSpeedX=-ballSpeedX;
+        }
+           else {
+            ballReset();
+           }
         }
         if(ballX<0)
         {   if(ballY>paddle1Y && ballY<paddle1Y+PADDLE_HEIGHT){
@@ -73,7 +80,8 @@
         canvasContext.fillRect(0,paddle1Y,10,PADDLE_HEIGHT);
         canvasContext.fillStyle='white';
         canvasContext.fillRect(ballX,ballY,10,10);
-
+        canvasContext.fillRect(canvas.width-10,paddle2Y,10,PADDLE_HEIGHT);
+        canvasContext.fillStyle='white';
 
     }
     </script>
