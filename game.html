@@ -47,8 +47,8 @@
     }
            
            function computerMove()
-           {
-               if (paddle2Y<ballY)
+           {   var paddle2Ycenter= paddle2Y+(PADDLE_HEIGHT/2);
+               if (paddle2Ycenter<ballY)
                paddle2Y+=6;
                else paddle2Y-=6;
            }
@@ -60,6 +60,7 @@
 
 
     function moveEverything(){
+        computerMove();
         ballX=ballX+ballSpeedX;
          ballY=ballY+ballSpeedY;
         if(ballX>canvas.width)
