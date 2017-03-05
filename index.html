@@ -121,12 +121,21 @@ if(showWinScreen){
         }
     }
     function drawEverything(){
-         if (showWinScreen)
-        {      canvasContext.fillText("Click to Continue",canvas.width/2,canvas.height/2);
-               return;
-        }
         canvasContext.fillStyle='black';
         canvasContext.fillRect(0,0,canvas.width,canvas.height);
+         if (showWinScreen)
+        {   canvasContext.fillStyle='white';
+     canvasContext.fillText("Click to Continue",canvas.width/2,canvas.height/2);
+             //if(playerScore>=winningScore){
+               //      canvasContext.fillText("You Won!!!  Click to Continue",canvas.width/2,canvas.height/2);
+              //}
+               //if(compScore>=winningScore){
+                     
+               //}            
+              
+               return;
+        }
+        
         canvasContext.fillStyle='white';
         canvasContext.fillRect(0,paddle1Y,10,PADDLE_HEIGHT);
         canvasContext.fillStyle='white';
