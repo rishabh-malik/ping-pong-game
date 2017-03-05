@@ -12,7 +12,8 @@
     var paddle1Y=250;
     var paddle2Y=250;
     const PADDLE_HEIGHT=100;
-
+    var playerScore=0;
+    var compScore=0;
 
     function calculateMousePos(evt)     //function to move paddle acc to position of mouse
     {
@@ -70,6 +71,7 @@
         }
            else {
             ballReset();
+            playerScore++;
            }
         }
         if(ballX<0)
@@ -78,7 +80,7 @@
         }
            else {
             ballReset();
-                }        }
+            compScore++;               }        }
         if(ballY>canvas.height)
         {
             ballSpeedY= -ballSpeedY;
@@ -97,7 +99,8 @@
         canvasContext.fillRect(ballX,ballY,10,10);
         canvasContext.fillRect(canvas.width-10,paddle2Y,10,PADDLE_HEIGHT);
         canvasContext.fillStyle='white';
-
+        canvasContext.fillText(playerScore,100,20);
+        canvasContext.fillText(compScore,canvas.width-100,20);        
     }
     </script>
 
