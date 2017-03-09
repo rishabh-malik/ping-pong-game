@@ -126,13 +126,13 @@ if(showWinScreen){
          if (showWinScreen)
         {   canvasContext.fillStyle='white';
      canvasContext.fillText("Click to Continue",canvas.width/2,canvas.height/2);
-             //if(playerScore>=winningScore){
-               //      canvasContext.fillText("You Won!!!  Click to Continue",canvas.width/2,canvas.height/2);
-              //}
-               //if(compScore>=winningScore){
-                     
-               //}            
-              
+             if(playerScore>=winningScore){
+                     canvasContext.fillText("You Won!!!  Click to Continue",canvas.width/2,canvas.height/2);
+              }
+               else if(compScore>=winningScore){
+                     canvasContext.fillText("Computer won!!!  Click to Continue",canvas.width/2,canvas.height/2);
+               }            
+              else  canvasContext.fillText("Click to Continue",canvas.width/2,canvas.height/2);
                return;
         }
         
